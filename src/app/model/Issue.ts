@@ -6,8 +6,8 @@ export interface Issue {
   code: Number,
   title: String,
   content: String,
-  emitter: User,
-  commentaires: Commentaire[],
+  emitter: Record<'nom' | 'url', string>[],
+  commentaires: Record<'id' | 'url', string>[],
   dateCreated: Date,
   dateClosed: Date
 }

@@ -1,7 +1,9 @@
-<div>
-  <h1>{{user.nom}}</h1>
-  <h2>{{user.fonction}}</h2>
-  <div *ngFor="let comment of user.commentairesEcrits">
-    <p>{{comment.contenu}}</p>
+<div class="user" (click)="openUser(user.id)">
+  <span class="name">{{user.nom}}</span>
+  <span class="fonction">{{user.fonction}}</span>
+  <div class="commentaires">
+    <a class="commentaire"
+       *ngFor="let comment of user.commentairesEcrits"
+       href="{{comment.url}}">Commentaire {{comment.id}}</a>
   </div>
 </div>

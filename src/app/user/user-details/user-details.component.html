@@ -1,1 +1,23 @@
-<h1>{{this.user.nom}}</h1>
+<button type="button" (click)="changeMode()">{{mode}}</button>
+<ng-container *ngIf="mode==='Edit' then display else edit"></ng-container>
+<ng-template #display>
+  <p>Id : {{user.id}}</p>
+  <p>Nom : {{user.nom}}</p>
+  <p>Fonction : {{user.fonction}}</p>
+  <div class="commentaires">Commentaires :
+    <a class="commentaire"
+       *ngFor="let comment of user.commentairesEcrits"
+       href="{{comment.url}}">Commentaire {{comment.id}}</a>
+  </div>
+</ng-template>
+<ng-template #edit>
+  <form (ngSubmit)="updateUser()">
+    <label for="id">Id : </label><input [(ngModel)]="user.id" id="id" name="id">
+    <label for="nom">Nom :</label><input [(ngModel)]="user.nom" id="nom" name="nom">
+    <label for="fonction">Fonction :</label><select [(ngModel)]="user.fonction" id="fonction" name="fonction">
+      <option *ngFor="let fonction of fonctions">{{ fonction }}</option>
+    </select>
+    <button type="submit">Envoyer</button><button type="reset">Reset</button>
+  </form>
+</ng-template>
+

@@ -1,0 +1,10 @@
+nav {
+  display: block;
+  width: 98%;
+  background: rgba(73, 129, 141, 0.82);
+  padding: 1%;
+}
+
+a {
+  margin: 1%;
+}

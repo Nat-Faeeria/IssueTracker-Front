@@ -1,4 +1,4 @@
 export enum Fonction {
-  USER,
-  DEVELOPPER
+  USER = "USER",
+  DEVELOPPER = "DEVELOPPER"
 }

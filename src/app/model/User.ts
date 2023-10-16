@@ -5,5 +5,5 @@ export interface User {
   id: Number,
   nom: String,
   fonction: Fonction,
-  commentairesEcrits: Commentaire[]
+  commentairesEcrits: Record<'id' | 'url', string>[]
 }
