@@ -1,0 +1,7 @@
+<div>
+  <h1>{{user.nom}}</h1>
+  <h2>{{user.fonction}}</h2>
+  <div *ngFor="let comment of user.commentairesEcrits">
+    <p>{{comment.contenu}}</p>
+  </div>
+</div>

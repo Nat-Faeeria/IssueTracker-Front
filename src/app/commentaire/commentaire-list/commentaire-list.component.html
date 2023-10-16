@@ -1,0 +1,5 @@
+<div *ngFor="let comment of commentaires">
+  <a href="{{comment.author.url}}">{{comment.author.nom}}</a>
+  <a href="{{comment.issue.url}}">{{comment.issue.title}}</a>
+  {{comment.contenu}}
+</div>
